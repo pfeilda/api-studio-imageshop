@@ -1,0 +1,23 @@
+{
+    "name": "apistudio/abunikat",
+    "type": "typo3-cms-extension",
+    "description": "My description comes here",
+    "homepage": "https://example.com",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS", "foo bar"],
+    "support": {
+        "issues": "https://forge.typo3.org/projects/extension-my_ext_key"
+    },
+    "require": {
+        "typo3/cms-core": "7.0.0-8.7.99"
+    },
+    "autoload": {
+        "psr-4": {
+            "Apistudio\\Abunikat\\": "Classes/"
+        }
+    },
+    "replace": {
+        "abunikat": "self.version",
+        "typo3-ter/abunikat": "self.version"
+    }
+}
