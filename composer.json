@@ -1,23 +1,28 @@
 {
-    "name": "apistudio/abunikatShop",
-    "type": "typo3-cms-extension",
-    "description": "My description comes here",
-    "homepage": "https://example.com",
-    "license": ["GPL-2.0+"],
-    "keywords": ["TYPO3 CMS", "foo bar"],
-    "support": {
-        "issues": "https://forge.typo3.org/projects/extension-my_ext_key"
-    },
-    "require": {
-        "typo3/cms": "^7.0.0 || ^8.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Apistudio\\Abunikat\\": "Classes/"
-        }
-    },
-    "replace": {
-        "abunikat": "self.version",
-        "typo3-ter/abunikat": "self.version"
+  "name": "apistudio/imageshop",
+  "type": "typo3-cms-extension",
+  "description": "My description comes here",
+  "homepage": "https://example.com",
+  "license": [
+    "GPL-2.0+"
+  ],
+  "keywords": [
+    "TYPO3 CMS",
+    "foo bar"
+  ],
+  "support": {
+    "issues": "https://forge.typo3.org/projects/extension-my_ext_key"
+  },
+  "require": {
+    "typo3/cms": "^7.0.0 || ^8.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Apistudio\\Imageshop\\": "Classes/"
     }
+  },
+  "replace": {
+    "imageshop": "self.version",
+    "typo3-ter/imageshop": "self.version"
+  }
 }
