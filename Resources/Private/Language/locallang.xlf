@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2011-10-18T18:20:51Z" product-name="my-ext">
+        <header/>
+        <body>
+            <trans-unit id="imageShop" xml:space="preserve">
+                <source>Image Shop</source>
+            </trans-unit>
+            <trans-unit id="collection" xml:space="preserve">
+                <source>Collection</source>
+            </trans-unit>
+            <trans-unit id="collection.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="collection.location" xml:space="preserve">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="product" xml:space="preserve">
+                <source>Product</source>
+            </trans-unit>
+            <trans-unit id="product.name" xml:space="preserve">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="product.price" xml:space="preserve">
+                <source>Price</source>
+            </trans-unit>
+            <trans-unit id="product.media" xml:space="preserve">
+                <source>Media</source>
+            </trans-unit>
+            <trans-unit id="general" xml:space="preserve">
+                <source>General</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
