@@ -1,12 +1,12 @@
 <?php
 
-namespace ApiStudio\Imageshop\Domain\Model;
+namespace Apistudio\Imageshop\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Class Product
- * @package ApiStudio\Imageshop\Domain\Model
+ * @package Apistudio\Imageshop\Domain\Model
  */
 class Product extends AbstractEntity
 {
@@ -26,7 +26,7 @@ class Product extends AbstractEntity
     protected $name = "";
 
     /**
-     * @var \ApiStudio\Imageshop\Domain\Model\Collection
+     * @var \Apistudio\Imageshop\Domain\Model\Collection
      */
     protected $collection;
 
@@ -79,7 +79,7 @@ class Product extends AbstractEntity
     }
 
     /**
-     * @return \ApiStudio\Imageshop\Domain\Model\Collection
+     * @return \Apistudio\Imageshop\Domain\Model\Collection
      */
     public function getCollection()
     {
@@ -87,7 +87,7 @@ class Product extends AbstractEntity
     }
 
     /**
-     * @param \ApiStudio\Imageshop\Domain\Model\Collection $collection
+     * @param \Apistudio\Imageshop\Domain\Model\Collection $collection
      */
     public function setCollection($collection)
     {

@@ -1,13 +1,13 @@
 <?php
 
-namespace ApiStudio\Imageshop\Domain\Model;
+namespace Apistudio\Imageshop\Domain\Model;
 
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
  * Class Collection
- * @package ApiStudio\Imageshop\Domain\Model
+ * @package Apistudio\Imageshop\Domain\Model
  */
 class Collection extends AbstractEntity
 {
@@ -20,9 +20,17 @@ class Collection extends AbstractEntity
      */
     protected $location;
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\ApiStudio\Imageshop\Domain\Model\Product>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Apistudio\Imageshop\Domain\Model\Product>
      */
     protected $products;
+    /**
+     * @var string
+     */
+    protected $description;
+    /**
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $previewimage;
 
     /**
      * @return string
@@ -57,7 +65,7 @@ class Collection extends AbstractEntity
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Apistudio\Imageshop\Domain\Model\Product>
      */
     public function getProducts()
     {
@@ -65,7 +73,7 @@ class Collection extends AbstractEntity
     }
 
     /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $products
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Apistudio\Imageshop\Domain\Model\Product> $products
      */
     public function setProducts($products)
     {
@@ -73,7 +81,7 @@ class Collection extends AbstractEntity
     }
 
     /**
-     * @param \ApiStudio\Imageshop\Domain\Model\Product $product
+     * @param \Apistudio\Imageshop\Domain\Model\Product $product
      */
     public function addProduct($product)
     {
@@ -81,10 +89,42 @@ class Collection extends AbstractEntity
     }
 
     /**
-     * @param \ApiStudio\Imageshop\Domain\Model\Product $product
+     * @param \Apistudio\Imageshop\Domain\Model\Product $product
      */
     public function removeProduct($product)
     {
         $this->products->detach($product);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    public function getPreviewimage()
+    {
+        return $this->previewimage;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $previewimage
+     */
+    public function setPreviewimage($previewimage)
+    {
+        $this->previewimage = $previewimage;
     }
 }

@@ -19,7 +19,9 @@ CREATE TABLE `tx_imageshop_domain_model_collection` (
 
   name             VARCHAR(255)                    NOT NULL,
   location         VARCHAR(255),
+  description      VARCHAR(255),
   products         INT(11),
+  previewimage     INT(11),
 
   PRIMARY KEY (uid),
   KEY parent (pid)
