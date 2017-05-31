@@ -1,0 +1,16 @@
+<f:debug>{collection}</f:debug>
+<h2>
+    <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:detail.collection.heading"/>
+    "{collection.name}"
+</h2>
+<div class="container-fluid">
+    <div class="row">
+        <f:for each="{collection.products}" as="product">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="thumbnail">
+                    <f:media file="{product.media}" width="200" height="200"/>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</div>
