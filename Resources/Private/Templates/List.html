@@ -1,32 +1,35 @@
-<h2>
-    <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:list.collection.heading"/>
-</h2>
-<div class="imageshop-collections container-fluid">
-    <div class="row">
-        <f:for each="{collections}" as="collection">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <f:media file="{collection.previewimage}"/>
-                    <h3>
-                        {collection.name}
-                    </h3>
-                    <span>
-                    <span class="glyphicon glyphicon-map-marker"></span>
-                        {collection.location}
-                    </span>
-                    <p style="padding-left: 20px">
-                        <span class="glyphicon glyphicon-list" style="margin-left: -20px"></span>
-                        {collection.description}
-                    </p>
-                    <a href="{f:uri.action(action: 'detail', arguments: '{collectionId: collection.uid}')}">
-                        <button class="btn btn-primary" style="width:100%;">
-                            <f:translate
-                                    key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:list.collection.detailAction"/>
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </a>
+<div class="imageshop collectionView">
+    <h2>
+        <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:list.collection.heading"/>
+        <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
+    </h2>
+    <div class="imageshop-collections container-fluid">
+        <div class="row">
+            <f:for each="{collections}" as="collection">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                    <div class="thumbnail">
+                        <f:media file="{collection.previewimage}"/>
+                        <h3>
+                            {collection.name}
+                        </h3>
+                        <span>
+                        <span class="glyphicon glyphicon-map-marker"></span>
+                            {collection.location}
+                        </span>
+                        <p style="padding-left: 20px">
+                            <span class="glyphicon glyphicon-list" style="margin-left: -20px"></span>
+                            {collection.description}
+                        </p>
+                        <a href="{f:uri.action(action: 'detail', arguments: '{collectionId: collection.uid}')}">
+                            <button class="btn btn-primary" style="width:100%;">
+                                <f:translate
+                                        key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:list.collection.detailAction"/>
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        </f:for>
+            </f:for>
+        </div>
     </div>
 </div>

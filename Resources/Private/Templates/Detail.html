@@ -1,16 +1,34 @@
-<f:debug>{collection}</f:debug>
-<h2>
-    <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:detail.collection.heading"/>
-    "{collection.name}"
-</h2>
-<div class="container-fluid">
-    <div class="row">
-        <f:for each="{collection.products}" as="product">
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="thumbnail">
-                    <f:media file="{product.media}" width="200" height="200"/>
-                </div>
+<div class="imageshop detailView">
+    <h2>
+        <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:detail.collection.heading"/>
+        "{collection.name}"
+        <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
+    </h2>
+    <form method="POST" action='<f:cObject typoscriptObjectPath="lib.imageshop.paymenturi"/>'>
+        <div class="container-fluid listProducts">
+            <div class="row">
+                <f:for each="{collection.products}" as="product">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product">
+                        <div class="thumbnail">
+                            <div class="product-content">
+                                <f:media file="{product.media}" width="200" height="200"/>
+                                <p>{product.name}</p>
+                                <p><span class="glyphicon glyphicon-euro"></span> {product.price}</p>
+                            </div>
+                            <div class="product-overlay select">
+                                <span class="glyphicon glyphicon-plus-sign"></span>
+                                <span class="glyphicon glyphicon-remove-sign text-danger"></span>
+                                <span class="glyphicon glyphicon-ok-sign text-success"></span>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
             </div>
-        </f:for>
-    </div>
+        </div>
+        <div class="confirm">
+            <button class="btn btn-primary btn-lg pull-right">
+                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart"/>
+            </button>
+        </div>
+    </form>
 </div>

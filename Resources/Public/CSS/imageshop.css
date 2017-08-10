@@ -1,0 +1,45 @@
+/*
+ * All Files are owned by API-Studio. It is forbidden to use,
+ * distrubute or anything else without permission of the
+ * owner. CEO Daniel Pfeil <dp@api-studio.de>
+ * Copyright (c) 2015-2017.
+ */
+.imageshop.detailView .listProducts .product img {
+  margin: 0;
+}
+.imageshop.detailView .listProducts .product .product-overlay {
+  display: none;
+  width: calc(100% - 38px);
+  height: calc(100% - 21px);
+  z-index: 200;
+  position: absolute;
+  top: 0;
+}
+.imageshop.detailView .listProducts .product .product-overlay span.glyphicon {
+  display: none;
+  font-size: 80pt;
+  text-align: center;
+  margin-top: calc(50% - 40pt);
+}
+.imageshop.detailView .listProducts .product .product-overlay span.glyphicon-plus-sign {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+}
+.imageshop.detailView .listProducts .product:hover .product-overlay {
+  display: block;
+}
+.imageshop.detailView .listProducts .product.selected .product-overlay {
+  display: block;
+}
+.imageshop.detailView .listProducts .product.selected .product-overlay span.glyphicon {
+  display: none;
+}
+.imageshop.detailView .listProducts .product.selected .product-overlay span.glyphicon-ok-sign {
+  display: block;
+}
+.imageshop.detailView .listProducts .product.selected:hover .product-overlay span.glyphicon {
+  display: none;
+}
+.imageshop.detailView .listProducts .product.selected:hover .product-overlay span.glyphicon-remove-sign {
+  display: block;
+}

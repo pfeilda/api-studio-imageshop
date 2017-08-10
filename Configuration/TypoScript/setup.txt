@@ -1,0 +1,19 @@
+lib.imageshop{
+   loginuri = {$imageshop.loginuri}
+   loginuri.value = {$imageshop.loginuri.value}
+   logouturi = {$imageshop.profileuri}
+   logouturi.value = {$imageshop.profileuri.value}
+   profileuri = {$imageshop.profileuri}
+   profileuri.value = {$imageshop.profileuri.value}
+   paymenturi = {$imageshop.profileuri}
+   paymenturi.value = {$imageshop.profileuri.value}
+}
+page {
+   includeCSSLibs {
+      imageshop = EXT:imageshop/Resources/Public/CSS/imageshop.css
+   }
+   includeJSFooterlibs {
+      jquery = /typo3conf/designs/Public/JS/jquery.js
+      imgeshop =  EXT:imageshop/Resources/Public/JS/imageshop.js
+   }
+}

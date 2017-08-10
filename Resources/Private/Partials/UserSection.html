@@ -1,0 +1,23 @@
+<!--
+  ~ All Files are owned by API-Studio. It is forbidden to use,
+  ~ distrubute or anything else without permission of the
+  ~ owner. CEO Daniel Pfeil <dp@api-studio.de>
+  ~ Copyright (c) 2015-2017.
+  -->
+<f:if condition="{isLoggedIn}">
+    <f:then>
+        <a href='<f:cObject typoscriptObjectPath="lib.imageshop.profileuri"/>'>
+            <span>{user.username}</span>
+        </a>
+        <a href='<f:cObject typoscriptObjectPath="lib.imageshop.logouturi"/>'>
+            <span><f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:logout"/></span>
+        </a>
+    </f:then>
+    <f:else>
+        <a href='<f:cObject typoscriptObjectPath="lib.imageshop.loginuri"/>'>
+            <span>
+                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:login"/>
+            </span>
+        </a>
+    </f:else>
+</f:if>

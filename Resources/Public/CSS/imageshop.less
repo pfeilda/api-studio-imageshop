@@ -1,0 +1,60 @@
+/*
+ * All Files are owned by API-Studio. It is forbidden to use,
+ * distrubute or anything else without permission of the
+ * owner. CEO Daniel Pfeil <dp@api-studio.de>
+ * Copyright (c) 2015-2017.
+ */
+.imageshop.detailView{
+  .listProducts{
+    .product{
+      img{
+        margin: 0;
+      }
+      .product-overlay{
+        display: none;
+        width: ~"calc(100% - 38px)";
+        height: ~"calc(100% - 21px)";
+        z-index: 200;
+        position: absolute;
+        top: 0;
+        span.glyphicon{
+          display: none;
+          font-size: 80pt;
+          text-align: center;
+          margin-top: ~"calc(50% - 40pt)";
+        }
+        span.glyphicon-plus-sign{
+          display: block;
+          color: rgba(255,255,255,0.7);
+        }
+      }
+    }
+    .product:hover{
+      .product-overlay {
+        display: block;
+      }
+    }
+    .product.selected{
+      .product-overlay{
+        display: block;
+        span.glyphicon{
+          display: none;
+        }
+        span.glyphicon-ok-sign{
+          display: block;
+        }
+      }
+    }
+    .product.selected:hover{
+      .product-overlay{
+        span.glyphicon{
+          display: none;
+        }
+        span.glyphicon-remove-sign{
+          display: block;
+        }
+      }
+    }
+  }
+}
+

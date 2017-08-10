@@ -45,6 +45,18 @@
             <trans-unit id="detail.collection.heading" xml:space="preserve">
                 <source>Detail Collection</source>
             </trans-unit>
+            <trans-unit id="login" xml:space="preserve">
+                <source>Login</source>
+            </trans-unit>
+            <trans-unit id="logout" xml:space="preserve">
+                <source>Logout</source>
+            </trans-unit>
+            <trans-unit id="pay" xml:space="preserve">
+                <source>Pay</source>
+            </trans-unit>
+            <trans-unit id="cart" xml:space="preserve">
+                <source>Add to cart</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
