@@ -4,11 +4,13 @@
         "{collection.name}"
         <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
     </h2>
-    <form method="POST" action='<f:cObject typoscriptObjectPath="lib.imageshop.paymenturi"/>'>
+    <f:form method="POST" name="cart" action="refresh" controller="Cart" arguments="{product:product}">
+        <f:form.hidden name="collection" value="{collection.uid}"/>
         <div class="container-fluid listProducts">
             <div class="row">
                 <f:for each="{collection.products}" as="product">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product">
+                        <f:form.hidden name="products[{product.uid}]" value="0"/>
                         <div class="thumbnail">
                             <div class="product-content">
                                 <f:media file="{product.media}" width="200" height="200"/>
@@ -26,9 +28,7 @@
             </div>
         </div>
         <div class="confirm">
-            <button class="btn btn-primary btn-lg pull-right">
-                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart"/>
-            </button>
+            <input type="submit" class="btn btn-primary btn-lg pull-right" value='<f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:addtocart"/>' />
         </div>
-    </form>
+    </f:form>
 </div>

@@ -55,7 +55,31 @@
                 <source>Pay</source>
             </trans-unit>
             <trans-unit id="cart" xml:space="preserve">
+                <source>Cart</source>
+            </trans-unit>
+            <trans-unit id="addtocart" xml:space="preserve">
                 <source>Add to cart</source>
+            </trans-unit>
+            <trans-unit id="paymentdate" xml:space="preserve">
+                <source>Paymentdate</source>
+            </trans-unit>
+            <trans-unit id="ispaid" xml:space="preserve">
+                <source>Is paid</source>
+            </trans-unit>
+            <trans-unit id="paymentmethod" xml:space="preserve">
+                <source>Paymentmethod</source>
+            </trans-unit>
+            <trans-unit id="paymentmethod.pleaseselect" xml:space="preserve">
+                <source>Please select</source>
+            </trans-unit>
+            <trans-unit id="paymentmethod.notselected" xml:space="preserve">
+                <source>Nothing selected</source>
+            </trans-unit>
+            <trans-unit id="paymentmethod.paypal" xml:space="preserve">
+                <source>PayPal</source>
+            </trans-unit>
+            <trans-unit id="paymentmethod.manual" xml:space="preserve">
+                <source>Manual</source>
             </trans-unit>
         </body>
     </file>

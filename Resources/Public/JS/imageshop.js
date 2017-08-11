@@ -8,5 +8,10 @@
 $(document).ready(function () {
     $(".listProducts .product").click(function (event) {
         $(this).toggleClass("selected");
+        if($(this).find("input").val() == 0){
+            $(this).find("input").val(1);
+        } else {
+            $(this).find("input").val(0);
+        }
     });
 });

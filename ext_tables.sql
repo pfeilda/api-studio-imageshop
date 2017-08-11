@@ -58,7 +58,7 @@ CREATE TABLE `tx_imageshop_domain_model_product` (
 #
 # Table structure for table 'tx_imageshop_domain_model_cart'
 #
-CREATE TABLE `tx_imageshop_domain_model_product` (
+CREATE TABLE `tx_imageshop_domain_model_cart` (
   uid              INT(11) UNSIGNED                NOT NULL AUTO_INCREMENT,
   pid              INT(11) DEFAULT '0'             NOT NULL,
 
@@ -75,9 +75,22 @@ CREATE TABLE `tx_imageshop_domain_model_product` (
   l18n_diffsource  MEDIUMBLOB                      NOT NULL,
 
   products         INT(11)                         NOT NULL,
-  isPayed          BOOLEAN DEFAULT FALSE           NOT NULL,
-  paymentDate      INT(11),
+  ispaid          TINYINT(1) DEFAULT 0            NOT NULL,
+  pymentmethod     INT(11),
+  paymentdate      INT(11),
 
   PRIMARY KEY (uid),
   KEY parent (pid)
+);
+
+#
+# Table structure for table 'tx_imageshop_cart_product_mm'
+#
+CREATE TABLE `tx_imageshop_cart_product_mm` (
+  uid_local   INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+  uid_foreign INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+  sorting     INT(11) UNSIGNED DEFAULT '0' NOT NULL,
+
+  KEY uid_local (uid_local),
+  KEY uid_foreign (uid_foreign)
 );

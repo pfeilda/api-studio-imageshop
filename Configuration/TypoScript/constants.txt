@@ -5,6 +5,4 @@ imageshop {
    logouturi.value = /index.php?id=18
    profileuri = TEXT
    profileuri.value = /index.php?id=18
-   payment = TEXT
-   payment.value = /index.php?id=18
 }
