@@ -59,6 +59,26 @@ return array(
                 'maxitems' => 1
             )
         ),
+        'products' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:products',
+            'config' => array(
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_imageshop_domain_model_product',
+                'foreign_table' => 'tx_imageshop_domain_model_product',
+                'MM' => 'tx_imageshop_cart_product_mm'
+            )
+        ),
+        'fe_user' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:fe_users',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'foreign_table' => 'fe_users'
+            )
+        ),
         'starttime' => array(
             'exclude' => true,
             'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
@@ -153,7 +173,7 @@ return array(
         '0' => array(
             'showitem' => '
                 --div--;LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:general, 
-                    paymentdate,ispaid,paymentmethod,
+                    paymentdate,ispaid,paymentmethod,fe_user,products,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
                     --palette--;;hidden,
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,

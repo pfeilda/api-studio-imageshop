@@ -4,8 +4,8 @@
         "{collection.name}"
         <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
     </h2>
-    <f:form method="POST" name="cart" action="refresh" controller="Cart" arguments="{product:product}">
-        <f:form.hidden name="collection" value="{collection.uid}"/>
+    <f:form method="POST" name="cart" action="refresh" controller="Cart">
+        <f:form.hidden name="collection" value="{collection}"/>
         <div class="container-fluid listProducts">
             <div class="row">
                 <f:for each="{collection.products}" as="product">

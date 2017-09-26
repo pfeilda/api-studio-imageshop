@@ -7,6 +7,7 @@
  */
 namespace Apistudio\Imageshop\Controller;
 
+use Apistudio\Imageshop\Domain\Model\Collection;
 use Apistudio\Imageshop\Domain\Repository\CollectionRepository;
 use Apistudio\Imageshop\Domain\Repository\ProductRepository;
 use TYPO3\CMS\Core\Utility\DebugUtility;
@@ -20,20 +21,22 @@ use TYPO3\CMS\Extbase\Object\ObjectManager;
  */
 class CartController extends ActionController
 {
-    public function refreshAction(){
+    /**
+     * @param array $products
+     * @param array $collection
+     */
+    public function refreshAction(array $products, array $collection){
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $collectionRepository = $objectManager->get(CollectionRepository::class);
         $productRepository = $objectManager->get(ProductRepository::class);
 
-        $formPostValue = $GLOBALS["_POST"]["tx_imageshop_inventory"];
+        $collection = $collectionRepository->findByIdentifier($collection);
 
-        $collection = $collectionRepository->findByUid($formPostValue["collection"]);
-        $products = array();
-        foreach ($formPostValue["products"] as $key => $value){
+        $productsModel = array();
+        foreach ($products as $key => $value){
             if($value == 1){
-                $products[] = $productRepository->findByUid($value);
+                $productsModel[] = $productRepository->findByUid($key);
             }
         }
-
     }
 }

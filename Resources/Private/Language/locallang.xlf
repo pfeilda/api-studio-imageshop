@@ -24,6 +24,9 @@
             <trans-unit id="product" xml:space="preserve">
                 <source>Product</source>
             </trans-unit>
+            <trans-unit id="products" xml:space="preserve">
+                <source>Products</source>
+            </trans-unit>
             <trans-unit id="product.name" xml:space="preserve">
                 <source>Name</source>
             </trans-unit>

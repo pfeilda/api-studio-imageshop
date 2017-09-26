@@ -15,7 +15,7 @@ return array(
             'endtime' => 'endtime',
             'fe_group' => 'fe_group'
         ),
-        'hideTable' => true
+        'hideTable' => false
     ),
     'columns' => array(
         'name' => array(
@@ -80,6 +80,14 @@ return array(
                     ],
                 ],
             ], $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'])
+        ),
+        'collection' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:collection',
+            'config' => array(
+                'type' => 'select',
+                'foreign_table' => 'tx_imageshop_domain_model_collection'
+            ),
         ),
         'starttime' => array(
             'exclude' => true,
@@ -175,7 +183,7 @@ return array(
         '0' => array(
             'showitem' => '
                 --div--;LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:general, 
-                    name,price,media,
+                    name,price,media,collection,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
                     --palette--;;hidden,
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
