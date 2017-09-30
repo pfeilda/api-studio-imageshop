@@ -60,6 +60,12 @@
             <trans-unit id="cart" xml:space="preserve">
                 <source>Cart</source>
             </trans-unit>
+            <trans-unit id="cart.acceptagb" xml:space="preserve">
+                <source>AGBs accepted</source>
+            </trans-unit>
+            <trans-unit id="cart.actualize" xml:space="preserve">
+                <source>Actualize</source>
+            </trans-unit>
             <trans-unit id="addtocart" xml:space="preserve">
                 <source>Add to cart</source>
             </trans-unit>

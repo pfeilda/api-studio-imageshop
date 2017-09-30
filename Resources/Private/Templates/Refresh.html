@@ -4,14 +4,49 @@
   ~ owner. CEO Daniel Pfeil <dp@api-studio.de>
   ~ Copyright (c) 2015-2017.
   -->
-<div class="imageshop refreshView">
+<div class="imageshop refreshView container-fluid">
     <h2>
-        <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:list.collection.heading"/>
+        <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart"/>
         <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
     </h2>
-    <div>
-        <h3>
-
-        </h3>
+    <div class="row">
+        <div class="col-xs-12">
+            <ul class="list-group">
+                <f:for each="{cart.products}" as="product">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-6">
+                                <f:image image="{product.media}" alt="Landscape" width="100c" height="100c" />
+                            </div>
+                            <div class="col-md-4 col-xs-6">
+                                {product.name}
+                            </div>
+                            <div class="col-md-3 col-xs-5">
+                                <span class="pull-right">
+                                    <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="false">{product.price}</f:format.currency>
+                                </span>
+                            </div>
+                            <div class="col-md-1 col-xs-1">
+                                <f:link.action action="removeproduct">
+                                    <button type="button" class="btn btn-danger"><span class="glyphicon-remove-sign glyphicon"></span></button>
+                                </f:link.action>
+                            </div>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+        <div class="col-xs-12">
+            <input type="checkbox"> <f:cObject typoscriptObjectPath="lib.imageshop.agbs" />
+        </div>
+        <div class="col-xs-12">
+            <button type="button" class="btn btn-success pull-right">
+                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:pay"/>
+            </button>
+            <button type="button" class="btn btn-info pull-right" style="margin-right: 10px">
+                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart.actualize"/>
+            </button>
+        </div>
+        <f:debug>{cart}</f:debug>
     </div>
 </div>

@@ -5,6 +5,8 @@ lib.imageshop{
    logouturi.value = {$imageshop.profileuri.value}
    profileuri = {$imageshop.profileuri}
    profileuri.value = {$imageshop.profileuri.value}
+   agbs = TEXT
+   agbs.value = Accept AGBs
 }
 page {
    includeCSSLibs {

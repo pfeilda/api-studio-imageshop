@@ -9,12 +9,12 @@
 return array(
     'ctrl' => array(
         'title' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart',
-        'label' => 'name',
+        'label' => 'paymentdate',
         'label_alt' => '',
         'iconfile' => '/typo3/sysext/core/Resources/Public/Icons/T3Icons/apps/apps-filetree-folder-media.svg',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'default_sortby' => 'name ASC',
+        'default_sortby' => 'paymentdate DESC',
         'delete' => 'deleted',
         'enablecolumns' => array(
             'disabled' => 'hidden',
@@ -37,6 +37,14 @@ return array(
         'ispaid' => array(
             'exclude' => true,
             'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:ispaid',
+            'config' => array(
+                'type' => 'check',
+                'default' => 0
+            )
+        ),
+        'acceptagb' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart.acceptagb',
             'config' => array(
                 'type' => 'check',
                 'default' => 0
@@ -173,7 +181,7 @@ return array(
         '0' => array(
             'showitem' => '
                 --div--;LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:general, 
-                    paymentdate,ispaid,paymentmethod,fe_user,products,
+                    paymentdate,acceptagb,ispaid,paymentmethod,fe_user,products,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
                     --palette--;;hidden,
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,

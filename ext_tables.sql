@@ -75,9 +75,11 @@ CREATE TABLE `tx_imageshop_domain_model_cart` (
   l18n_diffsource  MEDIUMBLOB                      NOT NULL,
 
   products         INT(11)                         NOT NULL,
-  ispaid          TINYINT(1) DEFAULT 0            NOT NULL,
-  pymentmethod     INT(11),
+  ispaid           TINYINT(1) DEFAULT 0            NOT NULL,
+  paymentmethod    INT(11),
   paymentdate      INT(11),
+  fe_user          INT(11),
+  acceptagb        TINYINT(1) DEFAULT 0            NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)
