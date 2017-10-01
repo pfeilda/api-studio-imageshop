@@ -57,6 +57,7 @@ CREATE TABLE `tx_imageshop_domain_model_product` (
 
 #
 # Table structure for table 'tx_imageshop_domain_model_cart'
+# @todo check for l18n_diffsource
 #
 CREATE TABLE `tx_imageshop_domain_model_cart` (
   uid              INT(11) UNSIGNED                NOT NULL AUTO_INCREMENT,
@@ -72,7 +73,7 @@ CREATE TABLE `tx_imageshop_domain_model_cart` (
   fe_group         VARCHAR(100) DEFAULT '0'        NOT NULL,
   sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
   l18n_parent      INT(11) DEFAULT '0'             NOT NULL,
-  l18n_diffsource  MEDIUMBLOB                      NOT NULL,
+  l18n_diffsource  MEDIUMBLOB                      ,
 
   products         INT(11)                         NOT NULL,
   ispaid           TINYINT(1) DEFAULT 0            NOT NULL,
