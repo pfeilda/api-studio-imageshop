@@ -1,4 +1,4 @@
-lib.imageshop{
+lib.imageshop {
    loginuri = {$imageshop.loginuri}
    loginuri.value = {$imageshop.loginuri.value}
    logouturi = {$imageshop.profileuri}
@@ -6,7 +6,20 @@ lib.imageshop{
    profileuri = {$imageshop.profileuri}
    profileuri.value = {$imageshop.profileuri.value}
    agbs = TEXT
-   agbs.value = Accept AGBs
+   agbs.value = Accept <a href="index.php?id=18">AGBs</a>
+   math = TEXT
+   math {
+      current = 1
+      prioriCalc = 1
+   }
+}
+plugin.tx_imageshop{
+   settings{
+      paypal{
+         clientId =
+         clientSecret =
+      }
+   }
 }
 page {
    includeCSSLibs {
@@ -17,3 +30,4 @@ page {
       imgeshop =  EXT:imageshop/Resources/Public/JS/imageshop.js
    }
 }
+plugin.tx_felogin_pi1.templateFile = EXT:imageshop/Resources/Private/Templates/FrontendLogin.html

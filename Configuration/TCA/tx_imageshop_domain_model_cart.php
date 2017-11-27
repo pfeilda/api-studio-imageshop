@@ -1,9 +1,26 @@
 <?php
 /**
- * All Files are owned by API-Studio. It is forbidden to use,
- * distrubute or anything else without permission of the
- * owner. CEO Daniel Pfeil <dp@api-studio.de>
- * Copyright (c) 2015-2017.
+ * Copyright notice
+ *
+ * (c)  2017-2017. Daniel Pfeil <dp@api-studio.de>, API Studio UG (haftungsbeschraenkt)
+ *
+ * All rights reserved
+ *
+ * This script is part of the TYPO3 project. The TYPO3 project is
+ * free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * The GNU General Public License can be found at
+ * http://www.gnu.org/copyleft/gpl.html.
+ *
+ * This script is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * This copyright notice MUST APPEAR in all copies of the script!
  */
 
 return array(
@@ -40,7 +57,8 @@ return array(
             'config' => array(
                 'type' => 'check',
                 'default' => 0
-            )
+            ),
+            'displayCond' => 'FIELD:paymentmethod:=:2'
         ),
         'acceptagb' => array(
             'exclude' => true,
@@ -67,6 +85,34 @@ return array(
                 'maxitems' => 1
             )
         ),
+        'paymentstate' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentstate',
+            'config' => array(
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => array(
+                    array('LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentstate.none', '0'),
+                    array('LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentstate.created', '1'),
+                    array('LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentstate.approved', '2'),
+                    array('LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentstate.failed', '3'),
+                ),
+                'readOnly' =>1,
+                'default' =>0,
+                'size' => 1,
+                'maxitems' => 1
+            ),
+            'displayCond' => 'FIELD:paymentmethod:=:1'
+        ),
+        'paymentid' => array(
+            'exclude' => true,
+            'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:paymentid',
+            'config' => array(
+                'type' => 'input',
+                'readOnly' =>1
+            ),
+            'displayCond' => 'FIELD:paymentmethod:=:1'
+        ),
         'products' => array(
             'exclude' => true,
             'label' => 'LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:products',
@@ -83,6 +129,7 @@ return array(
             'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:fe_users',
             'config' => array(
                 'type' => 'select',
+                'size' => 1,
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'fe_users'
             )
@@ -181,7 +228,7 @@ return array(
         '0' => array(
             'showitem' => '
                 --div--;LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:general, 
-                    paymentdate,acceptagb,ispaid,paymentmethod,fe_user,products,
+                    paymentdate,acceptagb,ispaid,paymentmethod,paymentstate,paymentid,fe_user,products,
                 --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, 
                     --palette--;;hidden,
                     --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,

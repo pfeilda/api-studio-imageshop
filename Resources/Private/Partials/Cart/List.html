@@ -1,0 +1,75 @@
+{namespace imageshop=Apistudio\Imageshop\ViewHelpers}
+<!--
+  ~ Copyright notice
+  ~
+  ~ (c)  2017-2017. Daniel Pfeil <dp@api-studio.de>, API Studio UG (haftungsbeschraenkt)
+  ~
+  ~ All rights reserved
+  ~
+  ~ This script is part of the TYPO3 project. The TYPO3 project is
+  ~ free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ The GNU General Public License can be found at
+  ~ http://www.gnu.org/copyleft/gpl.html.
+  ~
+  ~ This script is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ This copyright notice MUST APPEAR in all copies of the script!
+  -->
+
+<div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="cart-{cart.uid}">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#cart-accordion-{cobj.uid}" href="#cart-collapse-{cart.uid}" aria-expanded="true" aria-controls="cart-collapse-{cart.uid}">
+                <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart.single.panel.heading"/>
+                <f:format.date format="d.m.Y H:i">{cart.paymentdate}</f:format.date>
+            </a>
+        </h4>
+    </div>
+    <div id="cart-collapse-{cart.uid}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="cart-{cart.uid}">
+        <div class="panel-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="list-group">
+                            <f:for each="{cart.products}" as="product">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-4 col-xs-12">
+                                            <f:image src="{imageshop:copyright(filereference: product.media.originalResource)}" width="200"/>
+                                        </div>
+                                        <div class="col-md-5 col-xs-6">
+                                            {product.name}
+                                        </div>
+                                        <div class="col-md-3 col-xs-6">
+                                            <span class="pull-right">
+                                                <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="false">{product.price}</f:format.currency>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <!--@todo check if target is really needed-->
+                        <a href="{f:uri.action(action: 'download', arguments: '{cart: cart}')}" target="_blank">
+                            <button class="btn btn-success"><f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:cart.single.download"/></button>
+                        </a>
+                    </div>
+                    <div class="col-md-1 col-md-offset-5 col-xs-1 col-xs-offset-11">
+                        <span class="pull-right">
+                            <f:format.currency currencySign="€" decimalSeparator="." thousandsSeparator="," prependCurrency="false"><imageshop:calculateamount products="{cart.products}"></imageshop:calculateamount></f:format.currency>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

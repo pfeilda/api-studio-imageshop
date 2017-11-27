@@ -1,19 +1,45 @@
+{namespace imageshop=Apistudio\Imageshop\ViewHelpers}
+<!--
+  ~ Copyright notice
+  ~
+  ~ (c)  2017-2017. Daniel Pfeil <dp@api-studio.de>, API Studio UG (haftungsbeschraenkt)
+  ~
+  ~ All rights reserved
+  ~
+  ~ This script is part of the TYPO3 project. The TYPO3 project is
+  ~ free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation; either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ The GNU General Public License can be found at
+  ~ http://www.gnu.org/copyleft/gpl.html.
+  ~
+  ~ This script is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ This copyright notice MUST APPEAR in all copies of the script!
+  -->
+
 <div class="imageshop detailView">
     <h2>
         <f:translate key="LLL:EXT:imageshop/Resources/Private/Language/locallang.xlf:detail.collection.heading"/>
         "{collection.name}"
-        <f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" />
+        <f:comment><f:render partial="UserSection" arguments="{isLoggedIn:isLoggedIn,user:user}" /></f:comment>
     </h2>
     <f:form method="POST" name="cart" action="refresh" controller="Cart">
         <f:form.hidden name="collection" value="{collection}"/>
+        <f:form.hidden name="error" value="{}"></f:form.hidden>
         <div class="container-fluid listProducts">
             <div class="row">
-                <f:for each="{collection.products}" as="product">
+                <f:for each="{collection.products}" as="product" iteration="is">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product">
                         <f:form.hidden name="products[{product.uid}]" value="0"/>
                         <div class="thumbnail">
                             <div class="product-content">
-                                <f:media file="{product.media}" width="200" height="200"/>
+                                <f:image src="{imageshop:copyright(filereference: product.media.originalResource)}" width="200"/>
                                 <p>{product.name}</p>
                                 <p><span class="glyphicon glyphicon-euro"></span> {product.price}</p>
                             </div>

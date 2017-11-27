@@ -73,7 +73,7 @@ CREATE TABLE `tx_imageshop_domain_model_cart` (
   fe_group         VARCHAR(100) DEFAULT '0'        NOT NULL,
   sys_language_uid INT(11) DEFAULT '0'             NOT NULL,
   l18n_parent      INT(11) DEFAULT '0'             NOT NULL,
-  l18n_diffsource  MEDIUMBLOB                      ,
+  l18n_diffsource  MEDIUMBLOB,
 
   products         INT(11)                         NOT NULL,
   ispaid           TINYINT(1) DEFAULT 0            NOT NULL,
@@ -81,6 +81,8 @@ CREATE TABLE `tx_imageshop_domain_model_cart` (
   paymentdate      INT(11),
   fe_user          INT(11),
   acceptagb        TINYINT(1) DEFAULT 0            NOT NULL,
+  paymentstate     INT(11) DEFAULT 0               NOT NULL,
+  paymentid        VARCHAR(255) DEFAULT 0          NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid)

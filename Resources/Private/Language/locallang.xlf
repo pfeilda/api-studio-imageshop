@@ -42,8 +42,23 @@
             <trans-unit id="list.collection.heading" xml:space="preserve">
                 <source>Available Collections:</source>
             </trans-unit>
+            <trans-unit id="list.collection.overview" xml:space="preserve">
+                <source>Available Collections</source>
+            </trans-unit>
             <trans-unit id="list.collection.detailAction" xml:space="preserve">
                 <source>Show</source>
+            </trans-unit>
+            <trans-unit id="list.cart.heading" xml:space="preserve">
+                <source>Already bought products:</source>
+            </trans-unit>
+            <trans-unit id="list.cart.overview" xml:space="preserve">
+                <source>Already bought products</source>
+            </trans-unit>
+            <trans-unit id="cart.single.panel.heading" xml:space="preserve">
+               <source>Collection bought on: </source>
+            </trans-unit>
+            <trans-unit id="cart.single.download" xml:space="preserve">
+               <source>Download</source>
             </trans-unit>
             <trans-unit id="detail.collection.heading" xml:space="preserve">
                 <source>Detail Collection</source>
@@ -89,6 +104,27 @@
             </trans-unit>
             <trans-unit id="paymentmethod.manual" xml:space="preserve">
                 <source>Manual</source>
+            </trans-unit>
+            <trans-unit id="paymentstate" xml:space="preserve">
+                <source>Paymentstate</source>
+            </trans-unit>
+            <trans-unit id="paymentstate.none" xml:space="preserve">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="paymentstate.created" xml:space="preserve">
+                <source>Created</source>
+            </trans-unit>
+            <trans-unit id="paymentstate.approved" xml:space="preserve">
+                <source>Approved</source>
+            </trans-unit>
+            <trans-unit id="paymentstate.failed" xml:space="preserve">
+                <source>Failed</source>
+            </trans-unit>
+            <trans-unit id="paymentid" xml:space="preserve">
+                <source>Payment Id </source>
+            </trans-unit>
+            <trans-unit id="error.agbs" xml:space="preserve">
+                <source>Please accept the AGB's</source>
             </trans-unit>
         </body>
     </file>

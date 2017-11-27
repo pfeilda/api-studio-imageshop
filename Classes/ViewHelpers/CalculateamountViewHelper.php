@@ -22,16 +22,23 @@
  *
  * This copyright notice MUST APPEAR in all copies of the script!
  */
-
-namespace Apistudio\Imageshop\Domain\Repository;
-
-use TYPO3\CMS\Extbase\Persistence\Repository;
+namespace Apistudio\Imageshop\ViewHelpers;
 
 /**
- * Class Product
- * @package Apistudio\Imageshop\Domain\Repository
+ * Class CalculateamountViewHelper
+ * @package Apistudio\Imageshop\ViewHelpers
  */
-class ProductRepository extends Repository
+class CalculateamountViewHelper extends \TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper
 {
-
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $products
+     * @return double
+     */
+    public function render($products) {
+        $amount = 0.0;
+        foreach ($products as $key => $product){
+            $amount = $amount + $product->getPrice();
+        }
+        return $amount;
+    }
 }

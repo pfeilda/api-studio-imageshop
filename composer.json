@@ -1,17 +1,28 @@
 {
   "name": "apistudio/imageshop",
   "type": "typo3-cms-extension",
-  "description": "My description comes here",
-  "homepage": "https://example.com",
+  "description": "These Extension implements a shop functionality for especially images.",
+  "homepage": "api-studio.de",
   "license": [
     "GPL-2.0+"
   ],
   "keywords": [
     "TYPO3 CMS",
-    "foo bar"
+    "shop",
+    "image",
+    "media",
+    "paypal"
+  ],
+  "authors": [
+    {
+      "name": "Daniel pfeil",
+      "email": "dp@api-studio.de",
+      "homepage": "api-studio.de",
+      "role": "Developer"
+    }
   ],
   "support": {
-    "issues": "https://forge.typo3.org/projects/extension-my_ext_key"
+    "issues": "https://github.com/pfeilda/api-studio-imageshop/issues"
   },
   "require": {
     "typo3/cms": "^7.0.0 || ^8.0.0"
